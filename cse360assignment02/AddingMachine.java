@@ -2,6 +2,7 @@ package cse360assignment02;
 
 public class AddingMachine {
   private int total;
+  private String str;
   
   public AddingMachine () {
 	  /**
@@ -14,31 +15,40 @@ public class AddingMachine {
 	  /**
 	   * This method gets the total
 	   */
-    return 0;
+    return total;
   }
   
   public void add (int value) {
 	  /** 
 	   * This method adds to the total
 	   */
+	  str = str + " + " + Integer.toString(value);
+	  total = total + value;
   }
 
   public void subtract (int value) {
 	  /** 
 	   * this method subtracts from the total
 	   */
+	  str = str + " - " + Integer.toString(value);
+	  total = total - value;
   }
 
   public String toString () {
 	  /**
 	   * this method will return the total as a String
 	   */
-    return "";
+	  String temp = str;
+	  str = "0" + temp;
+			  
+    return str;
   }
 
   public void clear() {
 	  /**
-	   * This method will clear the total
+	   * This method will clear memory
 	   */
+	  total = 0;
+	  str = "";
   }
 }
